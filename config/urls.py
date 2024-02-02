@@ -18,6 +18,10 @@ from django.urls import path, include
 from  config.views import logout_view
 from page.views import home_view, page_view
 
+from  django.conf.urls.static import static
+from django.conf import settings
+
+
 
 urlpatterns = [
 
@@ -31,5 +35,9 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('account/logout/', logout_view, name='logout_view'),
 
+    
+    # tinyMCE
+    path('tinymce/', include('tinymce.urls')),
+    
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

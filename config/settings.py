@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-)9u7e%+hj%jfj+-rlq5)@xioialm&-=%mplrucbzt$tdogy3q6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    #"127.0.0.1:8000"
+]
 
 
 # Application definition
@@ -42,6 +44,7 @@ BASE_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    "tinymce",
 
 ]
 
@@ -85,7 +88,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
+
                 'config.global_context_processor.global_todo_categories_context',
                 'config.global_context_processor.global_page_context',
 
