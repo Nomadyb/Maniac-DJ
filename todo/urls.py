@@ -2,6 +2,10 @@ from django.urls import path
 from  .views import  all_todos_view,category_view, todo_detail_view, tag_view
 
 
+app_name = 'todo'
+
+
+
 urlpatterns = [
     # all todos
     path('', all_todos_view, name='all_todos_view'),
