@@ -47,6 +47,8 @@ THIRD_PARTY_APPS = [
 
 MY_APPS = [
     'todo',
+    'page',
+
 ]
 
 
@@ -68,7 +70,14 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',
+            BASE_DIR / 'todo/templates',
+
+
+
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,6 +85,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'config.global_context_processor.global_todo_categories_context',
             ],
         },
     },
@@ -130,6 +140,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# static files için 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static_files',
+    
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
