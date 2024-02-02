@@ -1,7 +1,5 @@
 from django.urls import path
-from  .views import  all_todos_view,category_view, todo_detail_view, tag_view
-
-
+from  .views import  all_todos_view,category_view, todo_detail_view, tag_view 
 app_name = 'todo'
 
 
@@ -15,6 +13,9 @@ urlpatterns = [
 
     
     path('<slug:category_slug>/<int:id>/', todo_detail_view, name='todo_detail_view'), # todo detail
+
+
+    #path('page/<str:page_slug>/', page_view, name='page_view'),
 
     
 ]

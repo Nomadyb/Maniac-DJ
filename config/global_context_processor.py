@@ -1,4 +1,5 @@
 from todo.models import TodoCategory, TodoTag
+from page.models import Page
 
 
 def global_todo_categories_context(request):
@@ -9,3 +10,10 @@ def global_todo_categories_context(request):
     )
 
 
+
+def global_page_context(request):
+    pages = Page.objects.filter(is_active=True)
+    return dict(
+        global_pages=Page.objects.filter(is_active=True)
+        
+    )

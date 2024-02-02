@@ -22,7 +22,9 @@ from page.views import home_view, page_view
 urlpatterns = [
 
 
-    path("todo/",include("todo.urls",namespace='todo')),
+    path("todo/", include("todo.urls", namespace='todo')),
+
+    path("page/", include("page.urls", namespace='page')),
 
     path('admin/', admin.site.urls),
 
