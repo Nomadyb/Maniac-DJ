@@ -28,8 +28,8 @@ def home_view(request):
 
 
 
-def page_view(request, slug):
-    result = list(filter(lambda x: (x['url'] == slug), FAKE_DB_PAGES)) 
+def page_view(request, pageSlug):
+    result = list(filter(lambda x: (x['url'] == pageSlug), FAKE_DB_PAGES)) 
    
     if result:
         context = dict(
@@ -40,4 +40,3 @@ def page_view(request, slug):
         # print(context)
         return render(request, "page/page_detail.html", context)
     raise Http404
-    
