@@ -16,13 +16,13 @@ class BlogCategory(models.Model):
     def __str__(self):
         return self.title
 
-    # def get_absolute_url(self):
-    #     return reverse(
-    #         'todo:category_view',
-    #         kwargs={
-    #             "category_slug": self.slug
-    #         }
-    #     )
+    def get_absolute_url(self):
+        return reverse(
+            'todo:category_view',
+            kwargs={
+                "category_slug": self.slug
+            }
+        )
 
 
 class BlogTag(models.Model):
@@ -54,6 +54,10 @@ class Post(models.Model):
     category = models.ForeignKey(
         BlogCategory, on_delete=models.SET_NULL, null=True)
     cover_image = models.ImageField(upload_to='post', blank=True, null=True)
+    slug = AutoSlugField(populate_from='title', 
+    unique=True, 
+
+    )
     title = models.CharField(max_length=200)
     content = tinymce_models.HTMLField(blank=True, null=True)
     is_active = models.BooleanField(default=False)
