@@ -11,7 +11,7 @@ from tinymce import  models as tinymce_models
 
 class Page(models.Model):
 
-
+    
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     slug =  AutoSlugField(populate_from='title', unique=True, )
     title = models.CharField(max_length=200)  
