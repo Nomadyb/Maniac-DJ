@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     #"127.0.0.1:8000"
+    #"0.0.0.0:8000",
+    "192.168.1.35",
 ]
 
 
@@ -51,6 +53,7 @@ THIRD_PARTY_APPS = [
 MY_APPS = [
     'todo',
     'page',
+    'blog',
 
 ]
 
